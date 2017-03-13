@@ -1,9 +1,11 @@
-Bunny Jumper
-============
-Bunny Jumper is a game where you control a small purple rabbit navigating terrain and dodging wily foes as they attempt
-to keep you from your carrots and coins!
+Kill All The Things
+===================
 
-Bunny Jumper - Intro to Game Dev Part 2
+The best game in the world evar.
+
+Starting app gratuitously stolen from hprofit/Jumper. We have no shame.
+
+Setup
 =========
 
 1. (sudo) npm install
