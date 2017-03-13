@@ -1,4 +1,16 @@
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update, render: render });
+class Game extends Phaser.Game {
+    constructor() {
+        let options = {
+            preload: preload,
+            create: create,
+            update: update,
+            render: render };
+        };
+        super(800, 600, Phaser.CANVAS, 'content');
+    }
+});
+
+new Game();
 
 function preload() {
 
