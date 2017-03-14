@@ -1,14 +1,17 @@
+import BootState from './states/BootState';
+import GameState from './states/GameState';
+
 class Game extends Phaser.Game {
     constructor() {
-        let options = {
-            preload: preload,
-            create: create,
-            update: update,
-            render: render };
-        };
+        let options = { preload, create, update, render };
         super(800, 600, Phaser.CANVAS, 'content');
+
+        //this.state.add('boot', new BootState());
+        //this.state.add('game', new GameState());
+
+        //this.state.start('game');
     }
-});
+};
 
 new Game();
 
