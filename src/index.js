@@ -3,99 +3,100 @@ import GameState from './states/GameState';
 
 class Game extends Phaser.Game {
     constructor() {
-        let options = { preload, create, update, render };
         super(800, 600, Phaser.CANVAS, 'content');
 
-        //this.state.add('boot', new BootState());
-        //this.state.add('game', new GameState());
+        this.state.add('boot', new BootState());
+        this.state.add('game', new GameState());
 
-        //this.state.start('game');
+        this.state.start('boot');
     }
+
+
 };
 
 new Game();
 
-function preload() {
+//function preload() {
 
-    game.load.image('bullet', 'assets/sprites/shmup-bullet.png');
-    game.load.image('ship', 'assets/sprites/thrust_ship.png');
+    //game.load.image('bullet', 'assets/sprites/shmup-bullet.png');
+    //game.load.image('ship', 'assets/sprites/thrust_ship.png');
 
-}
+//}
 
-var sprite;
-var weapon;
-var cursors;
-var fireButton;
+//var sprite;
+//var weapon;
+//var cursors;
+//var fireButton;
 
-function create() {
+//function create() {
 
-    //  Creates 30 bullets, using the 'bullet' graphic
-    weapon = game.add.weapon(30, 'bullet');
+    ////  Creates 30 bullets, using the 'bullet' graphic
+    //weapon = game.add.weapon(30, 'bullet');
 
-    //  The bullet will be automatically killed when it leaves the world bounds
-    weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+    ////  The bullet will be automatically killed when it leaves the world bounds
+    //weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
 
-    //  The speed at which the bullet is fired
-    weapon.bulletSpeed = 600;
+    ////  The speed at which the bullet is fired
+    //weapon.bulletSpeed = 600;
 
-    //  Speed-up the rate of fire, allowing them to shoot 1 bullet every 60ms
-    weapon.fireRate = 100;
+    ////  Speed-up the rate of fire, allowing them to shoot 1 bullet every 60ms
+    //weapon.fireRate = 100;
 
-    sprite = this.add.sprite(400, 300, 'ship');
+    //sprite = this.add.sprite(400, 300, 'ship');
 
-    sprite.anchor.set(0.5);
+    //sprite.anchor.set(0.5);
 
-    game.physics.arcade.enable(sprite);
+    //game.physics.arcade.enable(sprite);
 
-    sprite.body.drag.set(70);
-    sprite.body.maxVelocity.set(200);
+    //sprite.body.drag.set(70);
+    //sprite.body.maxVelocity.set(200);
 
-    //  Tell the Weapon to track the 'player' Sprite
-    //  With no offsets from the position
-    //  But the 'true' argument tells the weapon to track sprite rotation
-    weapon.trackSprite(sprite, 0, 0, true);
+    ////  Tell the Weapon to track the 'player' Sprite
+    ////  With no offsets from the position
+    ////  But the 'true' argument tells the weapon to track sprite rotation
+    //weapon.trackSprite(sprite, 0, 0, true);
 
-    cursors = this.input.keyboard.createCursorKeys();
+    //cursors = this.input.keyboard.createCursorKeys();
 
-    fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+    //fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
-}
+//}
 
-function update() {
+//function update() {
 
-    if (cursors.up.isDown)
-    {
-        game.physics.arcade.accelerationFromRotation(sprite.rotation, 300, sprite.body.acceleration);
-    }
-    else
-    {
-        sprite.body.acceleration.set(0);
-    }
+    //if (cursors.up.isDown)
+    //{
+        //game.physics.arcade.accelerationFromRotation(sprite.rotation, 300, sprite.body.acceleration);
+    //}
+    //else
+    //{
+        //sprite.body.acceleration.set(0);
+    //}
 
-    if (cursors.left.isDown)
-    {
-        sprite.body.angularVelocity = -300;
-    }
-    else if (cursors.right.isDown)
-    {
-        sprite.body.angularVelocity = 300;
-    }
-    else
-    {
-        sprite.body.angularVelocity = 0;
-    }
+    //if (cursors.left.isDown)
+    //{
+        //sprite.body.angularVelocity = -300;
+    //}
+    //else if (cursors.right.isDown)
+    //{
+        //sprite.body.angularVelocity = 300;
+    //}
+    //else
+    //{
+        //sprite.body.angularVelocity = 0;
+    //}
 
-    if (fireButton.isDown)
-    {
-        weapon.fire();
-    }
+    //if (fireButton.isDown)
+    //{
+        //weapon.fire();
+    //}
 
-    game.world.wrap(sprite, 16);
+    //game.world.wrap(sprite, 16);
 
-}
+//}
 
-function render() {
+//function render() {
 
-    weapon.debug();
+    //weapon.debug();
 
-}
+//}
