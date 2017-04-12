@@ -1,5 +1,5 @@
-Kill All The Things
-===================
+Shoot All The Things
+====================
 
 The best game in the world evar.
 
